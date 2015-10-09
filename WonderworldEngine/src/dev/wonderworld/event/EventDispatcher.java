@@ -3,8 +3,6 @@
  */
 package dev.wonderworld.event;
 
-import dev.wonderworld.event.type.Type;
-
 /**
  * @author Lukas Kannenberg, Lukas Peer
  * @since 09.10.2015
@@ -17,7 +15,7 @@ public class EventDispatcher {
 		this.event = event;
 	}
 
-	public void dispatch(Type type, EventHandler handler) {
+	public void dispatch(String type, EventHandler handler) {
 		if (event.handled)
 			return;
 
