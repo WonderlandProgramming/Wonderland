@@ -5,7 +5,7 @@ import dev.wonderworld.event.Event;
 public class TestEvent extends Event{
 
 	public TestEvent() {
-		super("TEST");
+		super(0);
 	}
 
 	public String getDebug(){

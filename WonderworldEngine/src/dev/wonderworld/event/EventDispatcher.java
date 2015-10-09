@@ -15,7 +15,7 @@ public class EventDispatcher {
 		this.event = event;
 	}
 
-	public void dispatch(String type, EventHandler handler) {
+	public void dispatch(int type, EventHandler handler) {
 		if (event.handled)
 			return;
 

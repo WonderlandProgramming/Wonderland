@@ -9,14 +9,14 @@ package dev.wonderworld.event;
  * @vesion 0.1
  */
 public class Event {
-	private String type;
+	private int type;
 	boolean handled;
 	
-	protected Event(String type) {
+	protected Event(int type) {
 		this.type = type;
 	}
 	
-	public String getType() {
+	public int getType() {
 		return type;
 	}
 }
