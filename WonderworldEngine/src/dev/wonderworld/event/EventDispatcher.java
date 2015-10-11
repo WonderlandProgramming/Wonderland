@@ -23,7 +23,7 @@ class EventDispatcher {
 	/**
 	 * This calls the event and cares of Callbacks and checks if {@code type = event.type}
 	 * @param type the they of the event checked
-	 * @param handler the handler called
+	 * @param handler the handler that is used
 	 */
 	public void dispatch(int type, EventHandler handler) {
 		if (event.handled)

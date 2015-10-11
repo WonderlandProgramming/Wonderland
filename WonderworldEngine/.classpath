@@ -7,11 +7,14 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/WonderworldEngine/lib/gson/gson-2.4-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/lwjgl/jar/lwjgl.jar" sourcepath="lib/lwjgl/src.zip">
+	<classpathentry kind="lib" path="lib/lwjgl/jars/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="lib/lwjgl/jars/lwjgl.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/WonderworldEngine/lib/lwjgl/doc/javadoc.zip!/"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="WonderworldEngine/lib/lwjgl/native"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="WonderworldEngine/lib/lwjgl/native-win"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/lwjgl/jars/slick-util.jar"/>
+	<classpathentry kind="lib" path="lib/luaJ/luaj-jme-3.0.jar" sourcepath="lib/luaJ/luaj-sources-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/luaJ/luaj-jse-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
