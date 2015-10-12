@@ -25,7 +25,6 @@ public class TestMain {
 		
 		EVENT_BUS.callEvent(e2);
 		
-		
 	}
 	
 	public boolean onDebugEvent(Event e){

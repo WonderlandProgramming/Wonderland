@@ -15,8 +15,9 @@ public class Entity {
 		return components;
 	}
 
-	public void addComponent(Component c) {
+	public Entity addComponent(Component c) {
 		components.add(c);
+		return this;
 	}
 
 	public boolean containsComponent(Component c) {

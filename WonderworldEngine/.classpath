@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="lib/lwjgl/jars/slick-util.jar"/>
 	<classpathentry kind="lib" path="lib/luaJ/luaj-jme-3.0.jar" sourcepath="lib/luaJ/luaj-sources-3.0.jar"/>
 	<classpathentry kind="lib" path="lib/luaJ/luaj-jse-3.0.jar"/>
+	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

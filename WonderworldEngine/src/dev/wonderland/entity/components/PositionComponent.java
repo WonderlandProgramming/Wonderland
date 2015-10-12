@@ -49,7 +49,6 @@ public class PositionComponent extends Component implements LuaInteractable {
 	@Override
 	public LuaValue getLua() {
 		LuaTable t = new LuaTable();
-		
 		//Variables
 		t.set("xTile", xTile);
 		t.set("yTile", yTile);
@@ -57,32 +56,24 @@ public class PositionComponent extends Component implements LuaInteractable {
 		t.set("yPos", yPos);
 		
 		//Functions
-		t.set("move", move.s_metatable);
+		t.set("move", new move());
 
 		return t;
-	}
-
-	private static LuaValue move(LuaValue xPos, LuaValue yPos) {
-		try {
-			xPos.checkint();
-			yPos.checkint();
-
-			move(xPos, yPos);
-			
-		} catch (LuaError error) {
-			return LuaValue.error("Did not get a int!");
-		}
-		return LuaValue.TRUE;
 	}
 
 	private class move extends TwoArgFunction {
 		@Override
 		public LuaValue call(LuaValue xPos, LuaValue yPos) {
-			return move(xPos, yPos);
+			try {
+				move(xPos.checkint(), yPos.checkint());
+			} catch (LuaError error) {
+				return LuaValue.error("Did not get a int!");
+			}
+			return LuaValue.TRUE;
 		}
 	}
 
-	public void move(float xDir, float yDir) {
+	public void move(int xDir, int yDir) {
 		this.xPos += xDir;
 		this.yPos += yDir;
 		this.xTile = (int) xPos / TILESIZE;
@@ -111,5 +102,10 @@ public class PositionComponent extends Component implements LuaInteractable {
 
 	public int getyTile() {
 		return yTile;
+	}
+
+	@Override
+	public String toString() {
+		return "PositionComponent [xPos=" + xPos + ", yPos=" + yPos + ", xTile=" + xTile + ", yTile=" + yTile + "]";
 	}
 }

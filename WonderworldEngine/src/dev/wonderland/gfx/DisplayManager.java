@@ -1,7 +1,6 @@
 package dev.wonderland.gfx;
 
 import java.awt.Canvas;
-import java.awt.Rectangle;
 
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
