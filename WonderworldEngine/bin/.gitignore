@@ -1,1 +1,13 @@
+/entities/
+/guis/
+/models/
+/renderEngine/
+/shaders/
+/textures/
+/toolbox/
 /dev/
+/animation/
+/luaTest.lua
+/tile/
+/test.png
+/image.png

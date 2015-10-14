@@ -14,18 +14,22 @@ import org.luaj.vm2.lib.jse.JseBaseLib;
 import org.luaj.vm2.lib.jse.JseMathLib;
 import org.luaj.vm2.lib.jse.LuajavaLib;
 
+import dev.wonderland.entity.components.LuaScriptComponent;
 import dev.wonderworld.event.Event;
 
 public abstract class LuaBaseEvent extends Event {
 
 	protected String script;
 
-	protected LuaBaseEvent(int ID, String luaFile) {
+	protected LuaBaseEvent(int ID, LuaScriptComponent lua) {
 		super(ID);
-		script = luaFile;
+		script = (lua != null) ? lua.getLua() : "NO LUA FILE";
 	}
 
-	public abstract void call();
+	protected abstract void call();
+
+	protected void addLibary(Globals user_globals) {
+	}
 
 	protected void callMethod(String name, LuaValue parameters) {
 		try {
@@ -40,6 +44,8 @@ public abstract class LuaBaseEvent extends Event {
 			user_globals.load(new StringLib());
 			user_globals.load(new JseMathLib());
 			user_globals.load(new LuajavaLib());
+			
+			addLibary(user_globals);
 
 			LoadState.install(user_globals);
 			LuaC.install(user_globals);

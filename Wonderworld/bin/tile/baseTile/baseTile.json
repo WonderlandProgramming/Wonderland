@@ -1,0 +1,6 @@
+{
+  "name": "BaseTile",
+  "textureSheet": "./textureSheet.png",
+  "animation": "../animation/baseAnimation.json",
+  "luaScript": "./baseScript.lua"
+}

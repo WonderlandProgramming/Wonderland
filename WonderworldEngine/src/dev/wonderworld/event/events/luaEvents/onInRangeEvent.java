@@ -3,9 +3,11 @@
  */
 package dev.wonderworld.event.events.luaEvents;
 
+import org.luaj.vm2.Globals;
 import org.luaj.vm2.LuaTable;
 
 import dev.wonderland.entity.Entity;
+import dev.wonderland.entity.components.LuaScriptComponent;
 import dev.wonderworld.event.events.LuaBaseEvent;
 import dev.wonderworld.lua.EntityConverter;
 
@@ -21,8 +23,8 @@ public class onInRangeEvent extends LuaBaseEvent {
 	
 	private Entity p1, p2;
 	
-	public onInRangeEvent(String luaFile, Entity p1, Entity p2) {
-		super(ID, luaFile);
+	public onInRangeEvent(Entity p1, Entity p2) {
+		super(ID, p1.containsComponent(LuaScriptComponent.ID) ? (LuaScriptComponent)p1.getComponent(LuaScriptComponent.ID) : null);
 		this.p1 = p1;
 		this.p2 = p2;
 		

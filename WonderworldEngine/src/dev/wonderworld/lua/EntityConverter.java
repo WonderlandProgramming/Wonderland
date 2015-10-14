@@ -17,6 +17,7 @@ public class EntityConverter {
 		LuaTable components = new LuaTable();
 		
 		for (Component c : e.getComponents()) {
+			if(c == null) break;
 			if (c instanceof LuaInteractable) {
 				components.set(c.getClass().getSimpleName(), ((LuaInteractable) c).getLua());
 			}
